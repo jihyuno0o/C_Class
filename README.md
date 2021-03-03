@@ -18,3 +18,53 @@ char<int<long<float<double<long double 바이트크기 ; 데이터 손실이 최
 
 while(1) -> continue : 나머지 루프 건너 뛰고 다시 루프 반복 , break : 반복문 탈출
 
+#include <stdio.h>
+
+int main()
+{
+
+	int num;
+	while(1)
+	{		
+		scanf("%d",&num);
+		if(num==0)
+		{
+			break;
+		}
+		else
+		{
+			switch (num)
+			{
+				case 1:
+					printf("1 : One\n");
+					break;
+				case 2:
+					printf("2 : Two\n");
+					break;
+				case 3:
+					printf("3 : Three\n");
+					break;
+				case 4:
+					printf("4 : Four\n");
+					break;
+				case 5:
+					printf("5 : Five\n");
+					break;
+				case 6:
+					printf("6 : Six\n");
+					break;
+				case 7:
+					printf("7 : Seven\n");
+					break;
+				case 8:
+					printf("8 : Eight\n");
+					break;
+				case 9:
+					printf("9 : Nine\n");
+					break;
+			}
+		}
+		
+		
+	}
+}	
