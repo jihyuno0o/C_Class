@@ -18,8 +18,8 @@ char<int<long<float<double<long double 바이트크기 ; 데이터 손실이 최
 
 while(1) -> continue : 나머지 루프 건너 뛰고 다시 루프 반복 , break : 반복문 탈출
 
-'''
 
+```
 #include <stdio.h>
 
 int main()
@@ -70,3 +70,4 @@ int main()
 		
 	}
 }	
+```
