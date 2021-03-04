@@ -72,3 +72,48 @@ int main()
 	}
 }	
 ```
+
+### 2021-03-04
+
+전역변수(Global Variable)는 정적변수(Static Variable)이다.
+전역변수는 같은 이름의 지역 변수에 의해서 가려지기도 한다.
+
+배열; 많은 양의 데이터를 일괄적으로 처리해야하는 경우에 유용. 둘 이상의 변수를 동시에 선언하는 효과
+
+문자=1byte char=ASCII
+문자열상수=char array + null :문자열이면서 상수의 특징을 지니다. 
+ex) char str1[5] ="Good"; -> Good0 =>0이 null (null이 문장의 끝을 나타냄)
+
+포인터'*' 는 배열이다. (주소저장)
+void function1(int*a) { ... }
+
+```
+#include <stdio.h>
+#include <conio.h>
+#include "MyHeader.h"
+
+int main()
+{
+//	char ch =getch(); //단일 키값을 되돌림
+	char buf[1024];
+	scanf("%s",buf);
+	printf("입력 문자열은 %s 입니다. \n",buf);
+	for(int i=0; buf[i]; i++)
+	{
+		printf("%c  ",buf[i]);
+	}
+	
+	while(1)
+	{
+		printf("\n숫자 입력. ");
+		int pos = getch()-48;
+		
+		if (buf[pos] != 0)
+			printf("\n%d -> %c ", pos,buf[pos]);
+		else
+			printf("\n 올바른 숫자 입력"); 
+
+	} 
+
+}
+```
