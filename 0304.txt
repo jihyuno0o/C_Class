@@ -1,0 +1,59 @@
+/*	int key;
+	int i,j,k; //내부사용변수 (사용안해도 선언)
+	
+	while(1)
+	{
+		if(key=='z') break; //scanf 함수는 [Enter]키로 입력의 끝을 검사. 
+							//따라서 단일문자 처리시 두번 입력으로 처 
+		
+		scanf("%c",&key);  
+		if(key != 13) func1(key); //[Enter]무시 
+	} 
+	printf("%c키 : 입력을 종료합니다.", key); 
+*/
+	
+/*	int i;
+	char ch;
+	char str[6]="Hello";
+	
+	printf("%s \n",str);
+	
+	for(i=0; i<3; i++)
+	{
+		ch=str[4-i];
+		str[4-i]=str[i];
+		str[i]=ch;
+	}
+	printf("%s \n",str);
+*/
+void ConvertChr(char buf[])
+{
+	for(int i=0; buf[i]; i++) // buf[i] ==0 이면 break; C언어에서만 사용가능
+	{
+		char a = buf[i];
+//		if(a==0) 
+//			break;
+		
+		if(a>96 && a<123)
+			a -= 32;
+		
+		printf("%c   ",a);
+	}
+}
+
+
+int main()
+{
+
+	int arr1[3][2];
+	printf("arr1: %d \n",arr1); //메모리 공간의 byte수
+	printf("arr1+1: %d \n",arr1+1);
+	printf("arr1+2: %d \n",arr1+2);
+	
+	int arr2[2][3];
+	printf("arr2: %d \n",arr2);
+	printf("arr2+1: %d \n",arr2+1);
+	printf("arr2+2: %d \n",arr2+2);		
+	return 0; 
+}
+
