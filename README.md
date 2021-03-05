@@ -117,3 +117,89 @@ int main()
 
 }
 ```
+
+### 2021-03-05
+
+&연산자 :변수의 주소 값 반환
+*연산자 :포인터가 가리키는 메모리 참조
+arr[i]==*(arr+i) //전부 같진 않지만 개념적으로는 같다.
+
+포인터연산 :포인터가 지니는 값을 증가 혹은 감소시키는 연산을 의미
+	자료형에 따라 증감하는 값이 다름
+ex) ptr1++; ptr1+=3; --ptr1;
+
+char* arr[3]={
+	"Fer",
+	"TCP",
+	"Soucr };
+
+배열을 사용해서 최대공약수 구하기
+```
+#include <stdio.h>
+
+int getDirtn(int n, int arr[]);
+int getRhddirtn(int a[],int b[],int n1,int n2);
+int main(void)
+{
+	int num1, num2;
+	printf("정수를 두 개 입력하세요: \n");
+    scanf("%d %d", &num1, &num2);    // 값을 두 개 입력받아서 변수 두 개에 저장
+	
+	
+	if(num1>num2)
+	{
+		int temp=num1;
+		num1=num2;
+		num2=temp;
+	}
+	int arr1[1000], arr2[1000]; 
+	int n1 =getDirtn(num1, arr1);
+	int n2 =getDirtn(num2, arr2);
+	
+	int gcd =getRhddirtn(arr1, arr2, n1, n2);
+
+    printf("%d과 %d의 최대공약수는 %d입니다. ",num1,num2,gcd);
+}
+
+int getDirtn(int n, int arr[])
+{
+	printf("%d: ",n);
+	
+	int index=0;
+	for(int i=1; i<n ; i++)
+	{
+		if(n%i==0)
+		{
+			arr[index]=i;
+			index++;
+			printf("%d, ",i);
+		}
+	}
+	arr[index]=n;
+	printf("%d\n",n);
+	
+	return index+1;
+}
+
+int getRhddirtn(int a[],int b[],int n1,int n2)
+{	
+	int rhddirtn=1;
+	for(int i=n1-1; i>=0; i--)
+	{
+		for(int j=n2-1; j>=0; j--)
+		{
+			if (a[i]==b[j])
+			{
+				rhddirtn=a[i];
+				return rhddirtn;
+			}
+		}
+	}
+	
+	return -1;
+}
+```
+
+구조체 struct : 하나 이상의 기본 자료형을 기반으로 사용자 정의 자료형을 만들 수 있는 문법 요소
+struct point { int x; int y;}p1,p2,p3;
+
