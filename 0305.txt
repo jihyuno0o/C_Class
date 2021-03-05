@@ -1,0 +1,70 @@
+```
+#include <stdio.h>
+
+int main(void)
+{
+	int a=2005;
+	int b=2021;
+	int* pA =&a;
+	void *vp;
+	
+	printf("pA : %08x \n", pA);
+	printf("&a : %08x \n",&a);
+	
+	(*pA)++; //a++
+	
+	printf("a : %d \n", a);
+	printf("*pA : %d \n",*pA);	 
+	
+	vp=pA++; //a변수 다음의 주소 vp=pA의 원래주소 
+	
+	printf("pA : %08x \n", pA);
+	printf("*pA : %d \n",*pA);	 
+	printf("vp : %08x \n", vp++);
+	printf("vp : %08x \n", vp++);
+
+	
+	return 0;	
+}
+```
+
+가장 작은 수 찾기
+```
+#include <stdio.h>
+
+
+int main(void)
+{
+	int arr[5];
+	
+	printf("정수 5개 입력.\n"); 
+	for(int i=0; i<5; i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	
+	int mini=1000;
+	for(int i=0; i<5; i++)
+	{
+	
+		if(mini>arr[i])
+			mini=arr[i];
+	}
+	printf("가장 작은 수 : %d", mini);
+	
+	return 0;	
+}
+```
+포인터의 배열
+```
+int main(void)
+{
+	char* arr[3]{"Fervent-lecture", "TCP/IP", "Socket Programming"};
+	
+	printf("%s \n",arr[0]);
+	printf("%c \n",arr[1][2]); //2차원배열처럼 사용가능
+	printf("%s \n",arr[2]);
+	
+	return 0;	
+}
+```
