@@ -1,5 +1,3 @@
-# C_Class
-kosta-2021
 
 ## 2021-03-02
 %8d, %8.2f, sizeof(int)=4 byte
